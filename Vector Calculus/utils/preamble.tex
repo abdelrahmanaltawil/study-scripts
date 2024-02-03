@@ -1,0 +1,49 @@
+% packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{booktabs}		% makes prettier tables
+\usepackage{todonotes}		% for todo notes
+\usepackage{subfiles}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+
+% tikz libraries
+\usetikzlibrary{lindenmayersystems}
+\usetikzlibrary{arrows.meta} 
+\usetikzlibrary{decorations.markings}
+\usepgfplotslibrary{fillbetween}
+\usepgfplotslibrary{patchplots}
+
+
+% definitions
+
+
+% environments
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newenvironment{solution}{
+	\setlength{\parindent}{0pt} \rmfamily
+	}{\hfill\rule{5pt}{5pt}\bigskip}
+	
+	
+% properties
+\pgfplotsset{
+		xlabel=$x$,
+		ylabel=$y$,
+		zlabel=$z$,
+		}
+\tikzset{parametricmarker/.style={
+    decoration={
+        markings,
+        mark= between positions 0 and 1 step 8mm with
+            {
+            \node[circle,inner sep=1.5pt,fill=black]{};
+            },
+	    },
+    postaction={decorate}
+	}
+}
+\renewcommand{\arraystretch}{1.5}

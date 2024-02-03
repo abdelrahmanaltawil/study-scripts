@@ -1,0 +1,93 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../media/}}}
+
+
+\begin{document}
+	
+	\begin{definition}
+		A vector field on $\mathbb{R}^n$ is a function $\mathbf{F} : D \subset \mathbb{R}^n \rightarrow \mathbb{R}^n$ that assign to each point $\mathbf{x}$ in domain\footnote{domain could be a subset of $\mathbb{R}^n$ or all of it} $D$ a vector $\mathbf{F}(\mathbf{x}) \equiv \langle x_1, \hdots, x_n \rangle \in \mathbb{R}^n$
+	\end{definition}
+	
+	\par For visualisation of vector fields defined in $\mathbb{R}^2$ or $\mathbb{R}^3$ one would plot some vectors samples across the domain to avoid clutter.  See plots of vector fields in $\mathbb{R}^2$ or $\mathbb{R}^3$ receptively.
+
+	\begin{figure*}[h]
+		\centering
+		\begin{subfigure}{0.47\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+				  	view={0}{90}, % for a view 'from above',
+				  	domain=-6:6,
+	  			    xmin=-5, xmax=5,
+				    ymin=-5, ymax=5,
+				    xtick={-4, 0, 4}, ytick={-4, 0, 4},
+				  	width=\linewidth
+					]
+					\addplot3[point meta={sqrt((y)^2 + (sin(deg(x)))^2)}, quiver={u=y, v=sin(deg(x)), scale arrows=0.2, every arrow/.append style={-{Stealth[scale=0.2+0.8*\pgfplotspointmetatransformed/1000]}}}, samples=16] (x,y,0);
+				\end{axis}
+			\end{tikzpicture}
+			\subcaption{$\mathbf{F} :  (x, y) \mapsto \langle y, \sin x \rangle$}
+		\end{subfigure}
+		\hfil
+		\begin{subfigure}{0.47\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+			  	    domain=-1:1,
+				    xmin=-1, xmax=1,
+				    ymin=-1, ymax=1,
+				    zmin=-1, zmax=1,
+				  	width=\linewidth,
+					]
+					\pgfplotsinvokeforeach{-1, -0.5, 0, 0.5, 1}{
+						\addplot3[point meta={sqrt((x^2)^2)}, quiver={u=x^2, v=0, w=0, scale arrows=0.2, every arrow/.append style={-{Stealth[scale=0.2+0.8*\pgfplotspointmetatransformed/1000]}}}, samples=6] (x,y,#1);
+					}
+				\end{axis}
+			\end{tikzpicture}
+			\subcaption{$\mathbf{F} :  (x, y, z) \mapsto \langle x^2, 0, 0 \rangle$}
+		\end{subfigure}
+	\end{figure*}
+	
+	\par A beautiful observation from these plots, that is most vector fields can be seen as flowing fluid, which provide a beautiful and helpful interpretation about their behaviour.
+	
+	\par A place where vector field might appear is in the representation of gradient of multivariable scalar function. Lets consider the following example.
+	\begin{example}
+		Let $f: \mathbb{R}^2 \rightarrow \mathbb{R}$ be a scalar function act on $\mathbb{R}^2$, with $f(x, y) = x^2y - y^3$. Write out $\nabla f(x, y)$ and plot it.
+	\end{example}
+	\begin{solution}
+		\begin{align*}
+			\nabla f(x, y) = 
+			\begin{bmatrix}
+				\frac{\partial f}{\partial x} \\
+				\frac{\partial f}{\partial y}
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				2xy \\
+				x^2 - 3y^2
+			\end{bmatrix}
+			\equiv
+			2xy \;\mathbf{i} + (x^2 - 3y^2) \;\mathbf{j}
+		\end{align*}
+		
+		The gradient $\nabla f(x, y)$ is a vector field act on $\mathbb{R}^2$, and its visualization 
+		\begin{figure}[h]
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+				  	view={0}{90}, % for a view 'from above'
+				  	domain=-7:7,
+	  			    xmin=-7, xmax=7,
+				    ymin=-7, ymax=7,
+		  	        grid=both,
+		  	        width=0.5\linewidth
+					]
+					\addplot3[point meta={sqrt((2*x*y)^2 + (x^2 - 3*y^2)^2)}, quiver={u=2*x*y, v=x^2 - 3*y^2, scale arrows=0.01, every arrow/.append style={-{Stealth[scale=0.2+0.8*\pgfplotspointmetatransformed/1000]}}}, samples=17] (x,y,0);
+				\end{axis}
+			\end{tikzpicture}
+		\end{figure}
+		
+		This vector field hold information of the magnitude and direction of the gradient of $f(x,y)$ at any point $(x,y) \in \mathbb{R}^2$.
+	\end{solution}
+	
+\end{document}

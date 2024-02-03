@@ -1,0 +1,29 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../media/}}}
+
+
+\begin{document}
+
+	\par In many fields, it is more convenient to represent vectors, matrices and tensors with identical notation, where lower indices "\textit{subscripts}" and upper indices "\textit{superscripts}" are appended to the variable representing the quantities of interest\footnote{this notation was introduced in Ricci calculus by Gregorio Ricci-Curbastro }. Even though, in mathematics \textit{subscripts} and \textit{superscripts} are interpreted differently, Einstein in his summation convention do not distinguish between them\footnote{that is, $x^2$ should be understood as the second component of $x$ not the square of $x$}.
+		\begin{align*}
+			& x_i \equiv x^i\\
+ 			& x_{ij} \equiv x^i_j \equiv x^{ij}
+		\end{align*}
+	\par Einstein introduced his summation convention to provide a simplified notations for sums (which is a vital operation in tensor calculus). He defined his convention based on the following rules.\\
+
+	\noindent\textbf{\underline{Rules}}
+	\begin{enumerate}
+		\item If an index appears twice in a single term\footnote{monom $\hdots + \overbrace{z^n y^n x^n}^{\text{monom}} + \hdots$}. Then it implies summation over the two variables that carry this index. This index is referred as "\textit{dummy index}", where index that appears once is called "\textit{free/live index}".
+			\begin{equation*}
+				\hdots + a_i b_{jk} z_i + \hdots \equiv \hdots + \sum_{i=1}^{n} a_i b_{jk} z_i + \hdots
+			\end{equation*}
+			\underline{Hence, in this example $i$ is a dummy index where $j,k$ are live indices.}
+		\item Number of free/live indices determine the order of the tensor (no live indices means scalar, one means vector, two means second order tensor and so on).
+		\item An index should not appear more than twice in a single term. 
+			\begin{equation*}
+				\hdots + a_{\color{red}i} b_{{\color{red}i}k} z_{\color{red}i} + \hdots \rightarrow \textbf{not valid}
+			\end{equation*}
+			\underline{One of possible exceptions is $a_i (b_i + c_i)$ since we add $b_i, \; c_i$ first.}
+	\end{enumerate}
+		
+\end{document}

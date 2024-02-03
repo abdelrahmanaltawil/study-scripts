@@ -1,0 +1,27 @@
+\documentclass{article}
+
+% == tools ==
+\input{utils/preamble}
+
+% == title ==
+\title{Playground}
+\author{Abdelrahman}
+\date{\today}
+
+% ==== START ====
+\begin{document}
+
+	\maketitle
+
+	% finite difference 
+	\subfile{sections/Forward_Finite_Difference}
+	\subfile{sections/Backward_Finite_Difference}
+	\subfile{sections/Central_Finite_Difference}
+	
+	\subfile{sections/assumptions}
+
+	
+	\bibliographystyle{plain}
+	\bibliography{./referances/referances.bib}
+
+\end{document}

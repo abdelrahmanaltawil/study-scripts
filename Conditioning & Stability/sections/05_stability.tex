@@ -1,0 +1,29 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../media/}}}
+
+
+\begin{document}
+	
+	\par Designing algorithms\footnote{i.e Any process to solve the problem definition. Could simply be direct evaluation of the problem definition, collection of steps, or numerical method} to solve numerical problems in computing devices comes with a challenge that exact computations are not feasible. Approximations of mathematical objects\footnote{i.e numbers, sequences, \dots} introduce errors that are unavoidable. Algorithm designer has investigate how these errors transcend through the algorithm. Bad design of an algorithm, lead to disastrous consequences such as error amplification \footnote{Hence false results}. Stability address the behavior of the algorithm under these errors. Let $\hat{f}(x)$ to be an algorithm to solve problem $f(x)$.
+		\begin{definition}
+			An algorithm $\hat{f}(x)$ to solve problem $f(x)$ is said to be stable if small perturbations (typically due to roundoff error) in the input will result small perturbations in its output.
+		\end{definition}
+		
+		\begin{definition}
+			An algorithm is said to be unstable if small perturbations in the input will result large perturbations in its output.
+		\end{definition}
+		
+		\par The consequence of stability can be traced by computing the either the absolute or relative errors\footnote{As mentioned, it is better to consider relative error. To eliminate data dependency}. A stable algorithm will make these errors small.
+		\subsection{Absolute error}
+			\begin{equation*}					
+				\| \hat{f}(\mathbf{x}) - f(\mathbf{x}) \| \sim \varepsilon
+			\end{equation*}
+			
+		\subsection{Relative error}
+			\begin{equation*}
+				\frac{\| \hat{f}(\mathbf{x}) - f(\mathbf{x}) \|}{\| f(\mathbf{x}) \|} \sim \varepsilon
+			\end{equation*}
+	
+		\par Where $\varepsilon$ is machine epsilon or machine precision. This means an optimal stable algorithm will produce results that is accurate to machine precision\footnote{This is the lower bound in machine computing}.
+	
+\end{document}

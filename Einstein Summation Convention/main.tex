@@ -1,0 +1,46 @@
+\documentclass{article}
+
+% == tools ==
+\input{utils/preamble}
+
+% == title ==
+\title{Einstein Summation Convention}
+\author{}
+\date{\today}
+
+% ==== START ====
+\begin{document}
+
+	\maketitle
+	
+	\section{Motivation}
+	\label{sec: motivation}
+	\subfile{sections/01_motivation}
+	
+	\section{Introduction}
+	\label{sec: introduction}
+	\subfile{sections/02_introduction}
+	
+	% *** einstein convention ***	
+	\section{Einstein Summation Convention}
+	\label{sec: einstein summation convention}
+	\subfile{sections/03_einstein_summation_convention.tex}
+	
+	\section{Examples}
+	\label{sec: examples}
+	\subfile{sections/04_examples}
+	
+	% *** Section Group Title ***
+	%\section{label2}
+	%\label{sec: label2}
+	%\subfile{sections/02_Label2}
+	
+	%\section{label3}
+	%\label{sec: label3}
+	%\subfile{sections/03_Label3}
+		
+	\bibliographystyle{plain}
+	\bibliography{./referances/referances.bib}
+
+\end{document}
+

@@ -1,0 +1,33 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../media/}}}
+
+
+\begin{document}
+	
+	\begin{example}
+		fsdf		
+	\end{example}
+	
+	\par In this section we will illustrate the stability analysis of some algorithm classes, noting that stability analysis could performed to other classes
+		\begin{itemize}
+			\item Algorithm that evaluate the problem definition directly.
+			\item Iterative algorithms\footnote{The error get summed through the algorithm}.
+			\item Recursive algorithm\footnote{The error get multiplied through the algorithm}.
+		\end{itemize}
+		
+		\par Tylor expansion
+			\begin{equation*}
+				y(t + \Delta t) = y(t) + \Delta \frac{dy}{dt} + \frac{\Delta t^2}{2} \frac{d^2y(c)}{dt^2}
+			\end{equation*}
+			
+		\par Given this differential problem
+			\begin{equation*}
+				\frac{dy}{dt} = f(y)
+			\end{equation*}
+		\par With Forward Eular approximation, the ODE reads
+		\begin{equation*}
+			\frac{y(t_n) - y(t_n + \Delta t)}{\Delta t} + \mathcal{O}(\Delta t^2) = f(y(t_n))
+		\end{equation*}
+
+
+\end{document}

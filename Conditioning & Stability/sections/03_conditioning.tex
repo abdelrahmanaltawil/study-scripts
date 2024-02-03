@@ -1,0 +1,35 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../media/}}}
+
+
+\begin{document}
+
+	\begin{definition}
+		A problem definition $f(x)$ is said to be well-conditioned if small perturbations ($\delta$) in the input ($x + \delta x$) will result small perturbations in the output $f(x + \delta x)$.
+	\end{definition}
+	
+	\begin{definition}
+		A problem definition $f(x)$ is said to be ill-conditioned if small perturbations ($\delta$) in the input ($x + \delta x$) will result very large perturbations in the output $f(x + \delta x)$.
+	\end{definition}
+	
+	\par As mentioned conditioning address how the problem is formulated or the nature of the problem itself, it is a property of the problem. Conditioning is measured through the condition number "\textit{kappa}" which quantify the sensitivity of the problem. The condition number can be computed in two ways
+	\subsection{Absolute condition number ($\hat{\kappa}$)}
+		\par The absolute condition number of a function $f : R^m \rightarrow R^n$ at a point $\mathbf{x} \in R^m$ is defined by 
+		\begin{equation*}					
+			\hat{\kappa}(\mathbf{x}) = \lim_{\delta \rightarrow 0} \sup_{\| \delta \mathbf{x} \| \leq \delta}\frac{\| f(\mathbf{x} + \delta \mathbf{x}) - f(\mathbf{x}) \|}{\| \delta \mathbf{x} \|}
+		\end{equation*}
+		
+		\par The absolute condition number of $f$ is the limit of the change in output over the change of input, which very similar to the definition of the derivative. This makes sense since both are concerned to quantify rate of change. Hence as $\hat{\kappa} \rightarrow \infty$ or get very large the problem become ill-conditioned. The exact cutoff between well- and ill-conditioned depends on the context of the problem and the uses of the results.
+	
+	\subsection{Relative condition number ($\kappa$)}
+		\par The relative condition number is introduced to rule out the dependance on the nature of data of $f$, since that could bring false judgments such the following 
+		\begin{equation*}
+			\textit{data values are small} \rightarrow \textit{small $\hat{\kappa}$} \rightarrow \textit{well-conditioned}
+		\end{equation*}
+		
+		Hence to detour such problem $\hat{\kappa}$ is normalized by data. Which makes the relative condition number reads
+		\begin{equation*}
+			\kappa(\mathbf{x}) = \lim_{\delta \rightarrow 0} \sup_{\| \delta \mathbf{x} \| \leq \delta}  \frac{\|  f(\mathbf{x} + \delta \mathbf{x}) - f(\mathbf{x}) \| \bigg/ \| f(\mathbf{x}) \|}{\| \delta \mathbf{x} \| \bigg/ \| \mathbf{x} \|}
+		\end{equation*}
+		
+\end{document}

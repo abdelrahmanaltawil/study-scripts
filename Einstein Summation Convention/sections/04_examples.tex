@@ -1,0 +1,83 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../media/}}}
+
+
+\begin{document}
+	
+	\begin{example}
+		Let $n = 3$ "i.e. cardinality". Write out what is represented by $a_i b_i$
+	\end{example}
+	\begin{solution}
+		We have a dummy index $i$ hence this imply summation
+		\begin{align*}
+			a_i b_i &= \sum_{i=1}^3 a_i b_i = a_1 b_1 + a_2 b_2 + a_3 b_3 \equiv \mathbf{a} \cdot \mathbf{b}
+		\end{align*}
+		Hence based on Einstein summation, $a_i b_i$ represents a dot product $\mathbf{a} \cdot \mathbf{b}$. This align with that $a_i b_i$ is zero order tensor\footnote{since no live indices, refer to rule two} "constant".
+	\end{solution}
+		
+	\begin{example}
+		Let $n = 3$. Write out what is represented by this $a_{ij} b_{kj} = c_{ik}$
+	\end{example}
+	\begin{solution}
+		We can see in $a_{ij} b_{kj}$ we have a \textit{dummy} index $j$, which imply that we have a summation, hence the expression reads
+		\begin{equation*}
+			c_{ik} = \sum_{j=1}^3 a_{ij} b_{kj}
+		\end{equation*}
+		
+		Computing this expression
+		\begin{align*}
+			& c_{11} = \sum_{j=1}^3 a_{1j} b_{1j} = a_{11} b_{11} + a_{12} b_{12} + a_{13} b_{13} \\
+			& \vdots \\
+			& c_{13} = \sum_{j=1}^3 a_{1j} b_{3j} = a_{11} b_{31} + a_{12} b_{32} + a_{13} b_{33} \\
+			& c_{21} = \sum_{j=1}^3 a_{2j} b_{1j} = a_{21} b_{11} + a_{22} b_{12} + a_{23} b_{13} \\
+			& \vdots \\
+			& c_{33} = \sum_{j=1}^3 a_{3j} b_{3j} = a_{31} b_{31} + a_{32} b_{32} + a_{33} b_{33} \\
+		\end{align*}
+		
+		We can see that the results of this expression is a second order tensor $c_{ik}$ since we have two live indices "it could be a matrix but not necessarily".
+	\end{solution}
+		
+	\begin{example}
+		Let $n = 2$. Write out what is represented by $d_i = a_{ij} b_{jk} c_k$
+	\end{example}
+	\begin{solution}
+		We have two dummy indices $j, \; k$ hence this imply two summations
+		\begin{align*}
+			d_i = \sum_{j=1}^2 \sum_{k=1}^2 a_{ij} b_{jk} c_k
+		\end{align*}
+		
+		Computing this expression
+		\begin{align*}
+			\begin{split}
+				d_1 = \sum_{j=1}^2 \sum_{k=1}^2 a_{1j} b_{jk} c_k 	&= \sum_{j=1}^2 a_{1j} b_{j1} c_1 + a_{1j} b_{j2} c_2 \\
+																	&= (a_{11} b_{11} c_1 + a_{11} b_{12} c_2) + (a_{12} b_{21} c_1 + a_{12} b_{22} c_2)
+			\end{split} \\
+			\begin{split} 
+				d_2 = \sum_{j=1}^2 \sum_{k=1}^2 a_{2j} b_{jk} c_k	&= \sum_{j=1}^2 a_{2j} b_{j1} c_1 + a_{2j} b_{j2} c_2 \\
+																	&= (a_{21} b_{11} c_1 + a_{21} b_{12} c_2) + (a_{22} b_{21} c_1 + a_{22} b_{22} c_2)
+			\end{split}
+		\end{align*}
+		
+		The results show that $d_i$ is a first order tensor, since we have one live index.
+	\end{solution}
+
+	
+	\begin{example}
+		Suppose $Q = b_{ij} y_i x_j$ and $y_i = a_{ij} x_j$. Substitute $y_i$ into $Q$ and simplify
+	\end{example}
+	\begin{solution}
+		To avoid overlap of the dummy indices in $y_i$ and $Q$, we will rename the dummy indices in $y_i$ (i.e. $j \rightarrow k$)\footnote{you can do it the other way around (i.e. in $Q$ rename $j \rightarrow k$ )}
+		\begin{equation*}
+			y_i = a_{ik} x_k
+		\end{equation*}
+		
+		Substituting
+		\begin{equation*}
+			Q = b_{ij} a_{ik} x_j x_k
+		\end{equation*}
+		
+		Note that we have no live indices, which align with that $Q$ is a zero order tensor. We have 3 dummy indices which imply three sums.
+	\end{solution}
+
+	
+\end{document}

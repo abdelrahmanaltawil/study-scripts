@@ -1,0 +1,18 @@
+% packages
+\usepackage[makeroom]{cancel} 	% crossout variables in equations
+\usepackage[many]{tcolorbox}	% boxes that hold content
+\usepackage{todonotes}			% for todo notes
+\usepackage{booktabs}			% makes prettier tables
+\usepackage{subfiles}
+\usepackage{amsmath}	
+%\usepackage[thmmarks, amsmath, thref]{ntheorem}
+
+
+% definitions
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+% environments
+\newenvironment{solution}{
+	\setlength{\parindent}{0pt} \rmfamily
+	}{\hfill\rule{5pt}{5pt}\bigskip}

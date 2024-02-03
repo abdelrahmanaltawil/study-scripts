@@ -1,0 +1,48 @@
+\documentclass{article}
+
+% == tools ==
+\input{utils/preamble}
+
+% == title ==
+\title{Vector Calculus}
+\author{}
+\date{\today}
+
+% ==== START ====
+\begin{document}
+
+	\maketitle
+
+	\section{Motivation}
+	\label{sec: motivation}
+	\subfile{sections/01_motivation}
+
+	\section{Introduction}
+	\label{sec: introduction}
+	\subfile{sections/02_introduction}
+	
+	% *** Section Group Title ***
+	\section{Vector Field}
+	\label{sec: vector field}
+	\subfile{sections/03_vector_field}
+		
+
+	\section{Line Integrals}
+	\label{sec: line integrals}
+	\subfile{sections/04_line_integrals}
+
+	\bibliographystyle{plain}
+	\bibliography{./referances/referances.bib}
+
+\end{document}
+
+
+% 				 --- IMPORTANT NOTE ---
+% ========================================================
+% | To add a subfile YOU HAVE to insert these lines in it|
+% ========================================================
+%
+%\documentclass[../main.tex]{subfiles}
+%\graphicspath{{\subfix{../media/}}}
+%
+% ========================================================

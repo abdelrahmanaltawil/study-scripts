@@ -1,0 +1,120 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../media/}}}
+
+\begin{document}
+	
+	\subsection{Kronecker Delta ($\delta$)}
+		\par A special type of tensor (can take any order of $2p$ where $p=\lbrace 1, \hdots, \infty \rbrace$) that follow the following rule
+		\begin{equation*}
+			\delta_j^i = 
+			\begin{cases} 
+	      		1 & i=j \\
+	      		0 & i \neq j
+			\end{cases}
+		\end{equation*}
+		\begin{flushright}
+			\textit{We note that $(\delta_{ij} \equiv \delta^{ij} \equiv \delta_j^i)$}
+		\end{flushright}
+		
+		\par If we assume that $\delta_j^i$ is a matrix then it would be equivalent to the identity matrix $\delta_j^i \equiv I$ where
+		\begin{equation*}
+			I =
+			\begin{bmatrix}
+				1 & 0 & 0 \\
+				0 & 1 & 0 \\
+				0 & 0 & 1
+			\end{bmatrix}	
+		\end{equation*}
+		
+		\par A nice property of $\delta_j^i$ is that it acts like index changer (inherited from identity matrix)
+		\begin{align*}
+			\delta_j^i A^j &= A^i \\
+			\delta_j^i A_i &= A_j 
+		\end{align*}
+	
+		\begin{example}
+			Let $n=2$ (i.e cardinality). Evaluate $\delta_j^i x_i$ 
+		\end{example}
+		\begin{solution}
+			We have a dummy index $i$ hence this imply a summation\footnote{according to Einstein summation convention}
+			\begin{align*}
+				\delta_j^i x_i = \sum_{i=1}^2 \delta_j^i x_i 	&= \delta_j^1 x_1 + \delta_j^2 x_2
+			\end{align*}
+			
+			We have one live index $j$, which means that the evaluation of $\delta_j^i x_i$ is a first order tensor $x_j$. To prove this lets compute the expression for $j \in \lbrace 1, 2 \rbrace$
+			\begin{align*}
+				j = 1 \quad \rightarrow \quad	\cancelto{1}{\delta_1^1} x_1 + \cancelto{0}{\delta_1^2} x_2 = x_1 \\
+				j = 2 \quad \rightarrow \quad	\cancelto{0}{\delta_2^1} x_1 + \cancelto{1}{\delta_2^2} x_2 = x_2 \\
+			\end{align*}
+			
+			As mentioned above $\delta_j^i$ acts like index changer 
+		\end{solution}
+		
+
+		\begin{example}
+			Let $n=2$ (i.e cardinality). Evaluate $\delta_j^i x_i x^j$ 
+		\end{example}
+		\begin{solution}
+			We have a two dummy indices $i, \; j$ hence this imply two summation
+			\begin{align*}
+				\delta_j^i x_i x^j = \sum_{j=1}^2 \sum_{i=1}^2 \delta_j^i x_i x^j 	&= \sum_{j=1}^2 \delta_j^1 x_1 x^j + \delta_j^2 x_2 x^j \\
+																			&= \cancelto{1}{\delta_1^1} x_1 x^1 + \cancelto{0}{\delta_1^2} x_2 x^1 + \cancelto{0}{\delta_2^1} x_1 x^2 + \cancelto{1}{\delta_2^2} x_2 x^2 \\
+																			&= x_1 x^1 + x_2 x^2 \equiv x_i x^i
+			\end{align*}
+		\end{solution}
+				
+		
+		\begin{example}
+			Suppose that $A, \; B$ are $3 \times 3$ inverse matrices (i.e. $A^{-1} = B$) and that $T^i = g_r^i a_{rs} y_s$ with $y_s = b_{sr} x_r$. Express $T^i$ in terms of $x_r$
+		\end{example}	
+		\begin{solution}
+			Since $A, \; B$ are inverse matrices then the following is true
+			\begin{equation*}
+				A_{ij} B_{jk} = \delta_{ik}			
+			\end{equation*}
+			
+			To express $T^i$ in terms of $x_r$ we will substitute $y_s$ into it, but first will rename the dummy index $r$ in $y_s$ to avoid overlap. Hence ($r \rightarrow k$) $y_s = b_{sk} x_k$ 
+			\begin{align*}
+				T^i = g_r^i a_{rs} (b_{sk} x_k) &= g_r^i \overbrace{a_{rs} b_{sk}}^{\delta_{rk}} x_k \\
+												&= g_r^i \overbrace{\delta_{rk} x_k}^{x_r} = g_r^i x_r
+			\end{align*}
+		\end{solution}
+		
+
+		\begin{example}
+			Calculate $\frac{\partial}{\partial x^k}(a_{ij} x^i x^j)$. Given that $a_{ij}$ is a matrix of constants.
+		\end{example}
+		\begin{solution}
+			\begin{align*}
+				\frac{\partial}{\partial x^k}(a_{ij} x^i x^j) 	&= a_{ij} \overbrace{\frac{\partial}{\partial x^k}(x^i x^j)}^{\text{product rule}} \\
+																&= a_{ij} \left ( \frac{\partial x^i }{\partial x^k} x^j + x^i \frac{\partial x^j }{\partial x^k} \right )
+			\end{align*}
+			\begin{tcolorbox}[title = Remember]			
+				From partial differentiation rules 
+				\begin{align*}
+					\frac{\partial x}{\partial y} &= 0	&	\frac{\partial x}{\partial x} &= 1	\\
+				\end{align*}
+				Which is equivalent to 
+				\begin{align*}
+					\frac{\partial x^i}{\partial x^j} &= 0		&	\frac{\partial x^i}{\partial x^i} &= 1
+				\end{align*}
+			\end{tcolorbox}
+			
+			One can see that the behaviour of partial derivative is equivalent to Kronecker Delta where
+			\begin{equation*}
+				\frac{\partial x^i}{\partial x^j} \equiv \delta_j^i =
+				\begin{cases}
+					1 & i=j \\
+		      		0 & i \neq j
+				\end{cases}
+			\end{equation*}
+			
+			Hence we replace partial derivative by $\delta$
+			\begin{align*}
+				\frac{\partial}{\partial x^k}(a_{ij} x^i x^j) 	&= a_{ij} ( \delta_k^i x^j + x^i \delta_k^j )	 \\
+																&= \delta_k^i a_{ij} x^j + \delta_k^j a_{ij} x^i	 =  a_{kj} x^j + a_{ik} x^i											
+			\end{align*}
+		\end{solution}
+		
+		
+\end{document}

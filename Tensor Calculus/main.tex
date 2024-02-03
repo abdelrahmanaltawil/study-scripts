@@ -1,0 +1,49 @@
+\documentclass{article}
+
+% == tools ==
+\input{utils/preamble}
+
+% == title ==
+\title{Tensor Calculus}
+\author{}
+\date{\today}
+
+% ==== START ====
+\begin{document}
+
+	\maketitle
+
+	\section{Motivation}
+	\label{sec: motivation}
+	\subfile{sections/01_motivation}
+	
+	\section{Introduction}
+	\label{sec: introduction}
+	\subfile{sections/02_introduction}
+
+	% *** Section Group Title ***
+	\section{Notable Tensors}
+	\label{sec: notable_tensors}
+	\subfile{sections/02_notable_tensors}
+	
+	%\section{label3}
+	%\label{sec: label3}
+	%\subfile{sections/03_Label3}
+
+
+
+	\bibliographystyle{plain}
+	\bibliography{./referances/referances.bib}
+
+\end{document}
+
+
+% 				 --- IMPORTANT NOTE ---
+% ========================================================
+% | To add a subfile YOU HAVE to insert these lines in it|
+% ========================================================
+%
+%\documentclass[../main.tex]{subfiles}
+%\graphicspath{{\subfix{../media/}}}
+%
+% ========================================================

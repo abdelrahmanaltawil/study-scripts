@@ -1,0 +1,36 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../media/}}}
+
+
+\begin{document}
+	
+	\par Given the following example, we will illustrate how not so complex tensor operations can be notionally expensive to perform in traditional notation.
+	
+	\begin{example}
+		Consider these two vectors $\mathbf{a}, \; \mathbf{b} \in \mathbb{R}^n$. Write out the dot product of these two vectors $\mathbf{a} \cdot \mathbf{b}$.
+	\end{example}
+	\begin{solution}
+		\begin{align*}
+			\mathbf{a} \cdot \mathbf{b} = 
+			\begin{bmatrix}
+				a_1 \\
+				\vdots \\
+				a_n
+			\end{bmatrix}
+			\cdot
+			\begin{bmatrix}
+				b_1 \\
+				\vdots \\
+				b_n
+			\end{bmatrix}
+			=
+			a_1 b_1 + \hdots + a_n b_n
+			\equiv
+			\sum_{i=1}^n a_i b_i
+		\end{align*}
+		\textbf{Question,} what about $\mathbf{b} \times \lbrace(\mathbf{a} \cdot \mathbf{b})\mathbf{b}\rbrace$?
+	\end{solution}
+		
+	\par One can see from the above example that performing tensor operations can get really messy very fast due to the notational representation of tensors. Hence the need to more simplistic notation is vital, which is what presented in Einstein convention.
+	
+\end{document}

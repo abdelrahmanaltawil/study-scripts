@@ -1,0 +1,50 @@
+\documentclass{tufte-handout}
+
+% == tools ==
+\input{utils/preamble}
+
+% == title ==
+\title{Linear Algebra: Conditioning \& Stability}
+\author{Nathan Kutz - Lecture Notes}
+\date{November 30, 2023}
+
+% ==== START ====
+\begin{document}
+
+	\maketitle
+	\subfile{sections/00_abstract}
+	
+	\section{Motivation}
+	\label{sec: motivation}
+	\subfile{sections/01_motivation}
+	
+	\section{Introduction}
+	\label{sec: introduction}
+	\subfile{sections/02_introduction}
+	
+	\newpage
+	
+	% *** conditioning ***
+	\section{Conditioning of a Problem}
+	\label{sec: conditioning}
+	\subfile{sections/03_conditioning}
+		
+	\section{Application of Conditioning Analysis}
+	\label{sec: conditioning app}
+	\subfile{sections/04_conditioning_applications}		
+
+
+	% *** stability ***
+	\section{Stability of an Algorithm}
+	\label{sec: stability}
+	\subfile{sections/05_stability}
+
+	\section{Application of Stability}
+	\label{sec: stability_app}
+	\subfile{sections/06_stability_applications}
+
+		
+	\bibliographystyle{plain}
+	\bibliography{./referances/referances.bib}
+
+\end{document}
