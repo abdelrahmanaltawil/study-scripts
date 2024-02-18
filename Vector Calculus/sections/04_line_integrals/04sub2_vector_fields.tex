@@ -1,0 +1,152 @@
+\documentclass[../../main.tex]{subfiles}
+\graphicspath{{\subfix{../../media/}}}
+
+
+\begin{document}
+	
+		\begin{definition}\label{def: scalar line integration}
+		Line integration of a vector field $\mathbf{F}: \mathbb{R}^n \rightarrow \mathbb{R}^n$ along a smooth curve $C$
+		\begin{equation}
+			\int_C \mathbf{F} \cdot \mathbf{T} \; ds
+		\end{equation}
+		where $\mathbf{T}$ is the tangent vector to curve $C$
+	\end{definition}
+		
+	\par As the definition of line integration in scalar field, the definition above is derived from the concept of Riemann summation. Let's take the following toy example to illustrate this.
+	
+	\begin{example}
+		Given a vector field in $\mathbb{R}^2$ defined by $\mathbf{F}(x, y) = (x^2 - y^2 -12) \; \mathbf{i} + 2xy \; \mathbf{j}$ and a parametric curve $C$ defined by following equations 
+		\begin{align*}
+			x &= 6t \cos(5t)		&&y = 6t^3 - 6\\
+		\end{align*}
+		Derive the definition of line integration exploiting the concept of Riemann summation. Graph some Riemann approximation of the line integration of $\mathbf{F}(x, y)$ along curve $C$ for arbitrary $n$
+	\end{example}
+	\begin{solution}
+		Riemann summation performed on $\mathbf{F}(x, y)$ along curve $C$ can be achieve by the following steps:
+		\begin{enumerate}
+			\item Divide the curve $C$ to $n$ small subarcs\footnote{small arcs} $\Delta s_1, \dots \Delta s_n$.
+			\item For every subarc $i$, evaluate $\mathbf{F}(x,y)$ and the unit tangent vector to the curve  direction $\mathbf{T}(t)$ at some point\footnote{choice of $(x_i^*, y_i^*)$ will decide which Riemann sum we have. Either Right, Left, Midpoint Riemann sum} $t_i^* \equiv (x_i^*, y_i^*) \in \Delta s_i$.
+			\item Compute $[\mathbf{F}(x_i^*, y_i^*) \, \cdot \, \mathbf{T}(t_i^*)] \; \Delta s_i$ for every subarc " i.e. the alignment between the vector field vector $\mathbf{F}(x_i^*, y_i^*)$ with the unit tangent vector $\mathbf{T}(t_i^*)$ of subarc $i$".
+			\item Sum  $[\mathbf{F}(x_i^*, y_i^*) \, \cdot \, \mathbf{T}(x_i^*, y_i^*)] \; \Delta s_i$ over $n$ to approximate how much the vectors of $\mathbf{F}(x_i^*, y_i^*)$; along the path defined by $C$, align with $C$.
+				\begin{equation*}
+					\text{Work} \approx \sum_{i=1}^n [\mathbf{F}(x_i^*, y_i^*) \cdot \mathbf{T}(x_i^*, y_i^*)] \Delta s_i 
+				\end{equation*}
+			\item Riemann summation imply that $n$ goes to infinity. Hence the Riemann summation gives us the line integration\footnote{recall that $\int \equiv lim_{n \rightarrow \infty} \sum_{i=1}^n$} of $\mathbf{F}(x, y)$ along curve $C$
+				\begin{equation*}
+					\int_C \mathbf{F} \cdot \mathbf{T} \; ds= \lim_{n \rightarrow \infty} \sum_{i=1}^n [\mathbf{F}(x_i^*, y_i^*) \cdot \mathbf{T}(x_i^*, y_i^*)] \Delta s_i 
+				\end{equation*}
+		\end{enumerate}
+
+		\begin{figure*}[h]
+			\begin{subfigure}[c]{0.45\textwidth}
+				\centering
+				\begin{tikzpicture}[
+						declare function={
+							xs(\t) = 6*\t*cos(deg(5*\t));
+							ys(\t) = 6*\t^3 - 6;
+							xs_prime(\t) = 6*cos(deg(5*\t)) - 30*\t*sin(deg(5*\t));
+							ys_p rime(\t) = 18*\t^2;
+							}
+						]
+					\begin{axis}[
+					  	view={0}{90}, % for a view 'from above'
+				        colormap/viridis,
+					  	domain=-7:7,
+		  			    xmin=-7, xmax=7,
+					    ymin=-7, ymax=7,
+			  	        width=\linewidth
+						]
+						
+						% function
+					    \addplot3[contour filled={number = 50}, thick, opacity=0.8] {sqrt((\x^2 - \y^2 -12)^2 + (2*\x*\y)^2 )};
+
+						\addplot3[white, point meta={sqrt((x^2-y^2-12)^2 + (2*x*y))^2)}, quiver={u=x^2-y^2-12, v=2*x*y, scale arrows=0.015, every arrow/.append style={-{Stealth[scale=0.2+0.8*\pgfplotspointmetatransformed/1000]}}}, samples=20] (x,y,0);	
+						
+						\addplot[red, thick, samples=20, parametricmarker, samples y=0, domain=0.5:1.1, variable=\t] ({xs(\t)}, {ys(\t)});
+						
+													
+						\addplot[yellow, thick, samples=3, samples y=0, domain=0.799:0.904, variable=\t] ({xs(\t)}, {ys(\t)});
+						\node at (axis cs:-1.0,0.2) [yellow, anchor=north east] {$\Delta s_i$};
+													
+						
+					\end{axis}
+				\end{tikzpicture}
+			\end{subfigure}
+			\hfil
+			\begin{subfigure}[c]{0.45\textwidth}
+				\centering
+				\begin{tikzpicture}[
+					declare function={
+						xs(\t) = 6*\t*cos(deg(5*\t));
+						ys(\t) = 6*\t^3 - 6;
+						xs_prime(\t) = 6*cos(deg(5*\t)) - 30*\t*sin(deg(5*\t));
+						ys_prime(\t) = 18*\t^2;
+						}
+					]
+					\begin{axis}[
+					  	view={0}{90}, % for a view 'from above'
+				        colormap/viridis,
+					  	domain=-7:7,
+		  			    xmin=-7, xmax=7,
+					    ymin=-7, ymax=7,
+			  	        width=\linewidth
+						]
+						
+						% function
+					    \addplot3[contour filled={number = 50}, thick, opacity=0.8] {sqrt((\x^2 - \y^2 -12)^2 + (2*\x*\y)^2 )};
+					    
+						\addplot3[white, point meta={sqrt((x^2-y^2-12)^2 + (2*x*y))^2)}, quiver={u=x^2-y^2-12, v=2*x*y, scale arrows=0.015, every arrow/.append style={-{Stealth[scale=0.2+0.8*\pgfplotspointmetatransformed/1000]}}}, samples=20] (x,y,0);	
+						
+						\addplot[red, thick, samples=20, parametricmarker, samples y=0, domain=0.5:1.1, variable=\t] ({xs(\t)}, {ys(\t)});
+						
+						% unit tangent vector to curve 
+						\pgfplotsinvokeforeach{0.5,0.78,0.91,1.0,1.09}{
+							\addplot [->, thick,  black] coordinates {
+								({xs(#1)}, {ys(#1)}) 
+								({xs(#1) + xs_prime(#1)/(sqrt(xs_prime(#1)^2 + ys_prime(#1)^2))}, {ys(#1) + ys_prime(#1)/(sqrt(xs_prime(#1)^2 + ys_prime(#1)^2)})};
+							
+							\addplot [->, thick,  yellow] coordinates {
+								({xs(#1)}, {ys(#1)}) 
+								({xs(#1) + (xs(#1)^2 - ys(#1)^2 - 12)/(sqrt((xs(#1)^2 - ys(#1)^2 - 12)^2 + (2*xs(#1)*ys(#1))^2))}, {ys(#1) + (2*xs(#1)*ys(#1))/(sqrt((xs(#1)^2 - ys(#1)^2 - 12)^2 + (2*xs(#1)*ys(#1))^2))})};
+							}
+					\end{axis}
+				\end{tikzpicture}
+			\end{subfigure}
+			\caption{Left: Illustrating $\Delta s_i$. Right: Riemann summation for small $n$ where vectors in yellow are $\mathbf{F}(x_i^*, y_i^*)$ and in black are $\mathbf{T}(x_i^*, y_i^*)$}
+		\end{figure*}
+	
+		The plot above is the approximated line integration of $\mathbf{F}(x,y)$ along curve $C$ using Riemann sum.
+	\end{solution}
+	
+	\par In context of parametric curves, it is more convenient\footnote{computationaly} to reformulate line integration formula  "presented in definition (\ref{def: scalar line integration})" in terms integration operator for the parametric variable "usually referred as $t$" rather than the arc length "usually referred as $s$" hence $ds \rightarrow dt$.
+	
+	\begin{definition}
+		Line integration of a vector field $\mathbf{F}: \mathbb{R}^n \rightarrow \mathbb{R}^n$ along a smooth parametric curve $C$ defined by vector function $\mathbf{r}(t)$, $a \leq t \leq b$ 
+		\begin{equation*}
+			\int_C \mathbf{F} \cdot \; d\mathbf{r} = \int_a^b \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}^\prime(t) \; dt = \int_C \mathbf{F} \cdot \mathbf{T} \; ds
+		\end{equation*}
+	\end{definition}
+
+
+	\begin{example}
+		Evaluate $\int_C \mathbf{F} \cdot \, d\mathbf{r}$, where $C$ is a quarter-circle defined through $\mathbf{r}(t) = \cos t \; \mathbf{i} + \sin t \; \mathbf{j}$, $0 \leq t \leq \pi/2$ and $\mathbf{F}$ is a vector field $\mathbf{F}(x,y) = x^2 \; \mathbf{i} - xy \; \mathbf{j}$.
+	\end{example}
+	\begin{solution}
+		From the parametric equation $x = \cos t$ and $y = \sin t$, hence we have
+		\begin{equation*}
+			\mathbf{F}(\mathbf{r}(t)) = \cos^2 t \; \mathbf{i} - \cos t \, \sin t \; \mathbf{j}		
+		\end{equation*}
+		and
+		\begin{equation*}
+			\mathbf{r}^\prime(t) = -\sin t \; \mathbf{i} + \cos t \; \mathbf{j}		
+		\end{equation*}
+		
+		Therefore the line integration reads
+		\begin{align*}
+			\int_C \mathbf{F} \cdot \; d\mathbf{r} 	&= \int_0^{\pi/2} \left ( -\cos^2 t \sin t -\cos^2 t \sin t \right ) dt \\
+								&= \int_0^{\pi/2} (-2\cos^2 t \sin t) dt \\
+								&= \left\lbrack 2 \frac{\cos^3 t}{3}  \right\rbrack_0^{\pi/2} = - \frac{2}{3}
+		\end{align*}
+	\end{solution}
+		
+\end{document}

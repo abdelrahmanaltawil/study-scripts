@@ -17,6 +17,11 @@
 \usepgfplotslibrary{fillbetween}
 \usepgfplotslibrary{patchplots}
 
+% path handling for multi directory subfiles 
+\makeatletter
+\providecommand*{\input@path}{}
+\g@addto@macro\input@path{{./sections//}{./sections/04_line_integrals//}{./04_line_integrals//}}
+\makeatother
 
 % definitions
 
@@ -35,6 +40,7 @@
 		ylabel=$y$,
 		zlabel=$z$,
 		}
+
 \tikzset{parametricmarker/.style={
     decoration={
         markings,
