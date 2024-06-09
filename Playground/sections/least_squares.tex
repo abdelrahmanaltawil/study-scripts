@@ -1,0 +1,131 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../media/}}}
+
+
+\begin{document}
+
+	\begin{figure}[h]
+	    \centering
+	    \tdplotsetmaincoords{80}{60}	
+		\begin{tikzpicture}[tdplot_main_coords]
+			%origin
+			\coordinate (origin) at (0,0,0);
+		
+			%column vectors coordinate
+			\coordinate (a1) at (-2,3,3);
+			\coordinate (a2) at (2,2,2);
+			
+			%linear combination of column vectors coordinate
+			\coordinate (y_hat) at ($0.7*(a1) + 0.5*(a2)$);
+		
+			%Axis 	
+			\draw[thick, -latex] (-2,0,0) -- (5,0,0) node[pos = 1.05] {$x_1$};
+			\draw[thick, -latex] (0,-2,0) -- (0,5,0) node[pos = 1.05] {$x_2$};
+			\draw[thick, -latex] (0,0,-1) -- (0,0,6) node[anchor=west] {$x_3$};
+		
+			%Plane
+			\path[draw=blue, fill=blue!10, thick, dashed, opacity = 0.8] (origin) -- (a1) -- ($(a1) + (a2)$) -- (a2) -- (origin);
+		
+			%column vectors
+			\draw[-latex, blue, thick] (origin) -- (a1) node[anchor=north east] {$a_1$};
+			\draw[-latex, blue, thick] (origin) -- (a2) node[anchor=north] {$a_2$};
+		
+		    %linear combination of column vectors vector
+		    \draw[-latex, red, thick] (origin) -- (y_hat) node[pos=0.7, below, sloped] {$\hat{y} = \beta_1 \vec{a}_1 + \beta_2 \vec{a}_2$};
+			
+		\end{tikzpicture}
+	    \caption{Least Square Problem - Linear combination of column vectors}
+	\end{figure}
+	
+	
+	\begin{figure}[h]
+	    \centering
+	    \tdplotsetmaincoords{80}{60}
+		\begin{tikzpicture}[tdplot_main_coords]
+		
+			%origin
+			\coordinate (origin) at (0,0,0);
+		
+			%column vectors coordinate
+			\coordinate (a1) at (-2,3,3);
+			\coordinate (a2) at (2,2,2);
+			
+			%linear combination of column vectors coordinate
+			\coordinate (y_hat) at ($0.7*(a1) + 0.5*(a2)$);
+		
+		    %realization vector coordinate
+			\coordinate (y) at (0,0.7,2.5);
+		
+			%Axis 	
+			\draw[thick, -latex] (-2,0,0) -- (5,0,0) node[pos = 1.05] {$x_1$};
+			\draw[thick, -latex] (0,-2,0) -- (0,5,0) node[pos = 1.05] {$x_2$};
+			\draw[thick, -latex] (0,0,-1) -- (0,0,6) node[anchor=west] {$x_3$};
+		
+			%Plane
+			\path[draw=blue, fill=blue!5, dashed, opacity = 0.8] (origin) -- (a1) -- ($(a1) + (a2)$) -- (a2) -- (origin);
+		
+			%column vectors
+			\draw[-latex, gray] (origin) -- (a1) node[anchor=north east] {$a_1$};
+			\draw[-latex, gray] (origin) -- (a2) node[anchor=north] {$a_2$};
+		
+		    %linear combination of column vectors vector
+		    \draw[-latex, blue, thick] (origin) -- (y_hat) node[midway, below, sloped] {$\hat{y}$};
+		
+		    %realization y vector
+			\draw[-latex, olive, thick] (origin) -- (y) node[midway, above, xshift=-2] {$y$};
+		
+		    %residuals vector
+			\draw[-latex, red, thick] (y) -- (y_hat) node[midway, below] {$r$};
+		
+		\end{tikzpicture}
+	    \caption{Least Square Problem}
+	\end{figure}
+	
+	
+	\begin{figure}[h]
+	    \centering
+	    \tdplotsetmaincoords{80}{60}
+		\begin{tikzpicture}[tdplot_main_coords]
+		
+			%origin
+			\coordinate (origin) at (0,0,0);
+		
+			%column vectors coordinate
+			\coordinate (a1) at (-2,3,3);
+			\coordinate (a2) at (2,2,2);
+			
+			%linear combination of column vectors coordinate
+			\coordinate (y_hat) at ($0.3*(a1) + 0.3*(a2)$);
+		
+		    %realization vector coordinate
+			\coordinate (y) at (0,0.7,2.5);
+		
+			%Axis 	
+			\draw[thick, -latex] (-2,0,0) -- (5,0,0) node[pos = 1.05] {$x_1$};
+			\draw[thick, -latex] (0,-2,0) -- (0,5,0) node[pos = 1.05] {$x_2$};
+			\draw[thick, -latex] (0,0,-1) -- (0,0,6) node[anchor=west] {$x_3$};
+		
+			%Plane
+			\path[draw=blue, fill=blue!5, dashed, opacity = 0.8] (origin) -- (a1) -- ($(a1) + (a2)$) -- (a2) -- (origin);
+		
+			%column vectors
+			\draw[-latex, gray] (origin) -- (a1) node[anchor=north east] {$a_1$};
+			\draw[-latex, gray] (origin) -- (a2) node[anchor=north] {$a_2$};
+		
+		    %linear combination of column vectors vector
+		    \draw[-latex, blue, thick] (origin) -- (y_hat) node[pos=0.8, below, sloped] {$\hat{y}$};
+		
+		    %realization y vector
+			\draw[-latex, olive, thick] (origin) -- (y) node[midway, above, xshift=-2] {$y$};
+		
+		    %residuals vector
+			\draw[-latex, red, thick] (y) -- (y_hat) node[pos=0.5, above, yshift=2] {$r$};
+		
+		\end{tikzpicture}
+	    \caption{Least Square Problem}
+	\end{figure}
+	
+	
+	
+	
+\end{document}

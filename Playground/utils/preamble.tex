@@ -2,11 +2,25 @@
 \usepackage{amsmath}
 \usepackage{pgfplots}		% plots
 \usepackage{tikz}			% graphical drawings
+\usepackage{tikz-3dplot}
+\usepackage{subcaption}		% sub figures
 \usepackage{fp}	
 \usepackage{booktabs}		% makes prettier tables
 \usepackage{todonotes}		% for todo notes
 \usepackage{subfiles}		
+\usepackage{changepage}		% play with page margins 
+\usepackage{listofitems}
+\usepackage{physics}
+\usepackage{bm}
 
+\usetikzlibrary{patterns}
+\pgfplotsset{compat=1.11}
+\usetikzlibrary{angles, quotes, intersections}
+
+%Styles
+\tikzset{axis/.style={thick,-latex}}
+\tikzset{vec/.style={thick,blue}}
+\tikzset{univec/.style={thick,red,-latex}}
 
 % definitions
 \newtheorem{definition}{Definition}
