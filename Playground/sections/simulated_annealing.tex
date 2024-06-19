@@ -30,4 +30,32 @@
 	    \caption{Simulated Annealing Temperature }
 	\end{figure}
 
+
+	\SetKwComment{Comment}{/* }{ */}
+
+	\begin{algorithm}
+		\caption{Simulated Annealing Algorithm}\label{alg:two}
+		\KwData{$T_i, \, x_i $}
+		\KwResult{$x_{n} \gets \text{last solution candidate}$}\vspace{5pt}
+		$T_0 \gets \text{initial temperature of cooling schedule}$\;
+		$x_0 \gets \text{starting solution candidate}$\;\vspace{5pt}
+
+		\For{$i \in \lbrace 0, \dots, n\rbrace$}{
+		  $x_\text{neighbor} \gets \text{randomly sample a neighbor from } x_i \text{ neighborhood}$\;
+		  $\Delta \, cost \gets \text{compute cost difference between } x_\text{neighbor} \text{ and } x_i$\;\vspace{5pt}
+		  \uIf{$\text{cost}(x_\text{neighbor}) \text{ is better than } \text{cost}(x_i)$}{
+		    \textbf{Accept} $x_{i+1} \gets x_i$\;\vspace{5pt}
+		  }
+		  \uElseIf{$\text{cost}(x_\text{neighbor}) \text{ is worse than } \text{cost}(x_i)$}{\vspace{3pt}
+		  	\eIf{\text{probability} $e^{-\Delta cost \,/\,T_i}$}{ 
+		  		\textbf{Accept} $x_{i+1} \gets x_i$\;\vspace{5pt} 
+		  	}
+		  	{
+		      	\textbf{Reject} \text{Do nothing};\vspace{5pt}
+		  	}
+		  }
+		  }
+	\end{algorithm}
+
+
 \end{document}

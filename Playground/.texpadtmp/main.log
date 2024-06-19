@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.29)  28 MAY 2024 01:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.29)  18 JUN 2024 16:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -493,6 +493,54 @@ Package: bm 2023/07/08 v1.2f Bold Symbol Support (DPC/FMi)
 \symboldsymbols=\mathgroup6
 Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count329
+\algocf@hangindent=\skip56
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count330
+LaTeX Info: Redefining \checkoddpage on input line 45.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip57
+\skiplinenumber=\skip58
+\skiprule=\skip59
+\skiphlne=\skip60
+\skiptext=\skip61
+\skiplength=\skip62
+\algomargin=\skip63
+\skipalgocfslide=\skip64
+\algowidth=\dimen296
+\inoutsize=\dimen297
+\inoutindent=\dimen298
+\interspacetitleruled=\dimen299
+\interspacealgoruled=\dimen300
+\interspacetitleboxruled=\dimen301
+\algocf@ruledwidth=\skip65
+\algocf@inoutbox=\box66
+\algocf@inputbox=\box67
+\AlCapSkip=\skip66
+\AlCapHSkip=\skip67
+\algoskipindent=\skip68
+\algocf@nlbox=\box68
+\algocf@hangingbox=\box69
+\algocf@untilbox=\box70
+\algocf@skipuntil=\skip69
+\algocf@capbox=\box71
+\algocf@lcaptionbox=\skip70
+\algoheightruledefault=\skip71
+\algoheightrule=\skip72
+\algotitleheightruledefault=\skip73
+\algotitleheightrule=\skip74
+\c@algocfline=\count331
+\c@algocfproc=\count332
+\c@algocf=\count333
+\algocf@algoframe=\box72
+\algocf@algobox=\box73
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
 File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
@@ -502,11 +550,11 @@ File: tikzlibraryangles.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
 File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryintersections.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex
-\pgf@intersect@solutions=\count329
+\pgf@intersect@solutions=\count334
 ))
-\c@definition=\count330
+\c@definition=\count335
 )
-\c@example=\count331
+\c@example=\count336
  (/Users/abdelrahmanaltawil/Developer/GitHub/study-scripts/Playground/.texpadtmp/main.aux)
 \openout1 = `main.aux'.
 
@@ -526,16 +574,16 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
  (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count332
-\scratchdimen=\dimen296
-\scratchbox=\box66
-\nofMPsegments=\count333
-\nofMParguments=\count334
+\scratchcounter=\count337
+\scratchdimen=\dimen302
+\scratchbox=\box74
+\nofMPsegments=\count338
+\nofMParguments=\count339
 \everyMPshowfont=\toks44
-\MPscratchCnt=\count335
-\MPscratchDim=\dimen297
-\MPnumerator=\count336
-\makeMPintoPDFobject=\count337
+\MPscratchCnt=\count340
+\MPscratchDim=\dimen303
+\MPnumerator=\count341
+\makeMPintoPDFobject=\count342
 \everyMPtoPDFconversion=\toks45
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -547,8 +595,8 @@ Package pgfplots notification 'compat/show suggested version=true': you might be
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
-\caption@adjustwidth@hsize=\dimen298
-\caption@adjustwidth@linewidth=\dimen299
+\caption@adjustwidth@hsize=\dimen304
+\caption@adjustwidth@linewidth=\dimen305
 Package caption Info: End \AtBeginDocument code.
 (./sections/Forward_Finite_Difference.tex) (./sections/Backward_Finite_Difference.tex) (./sections/Central_Finite_Difference.tex
 
@@ -609,25 +657,25 @@ Overfull \hbox (69.8048pt too wide) in paragraph at lines 41--54
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [2] [3] [4] [5] [6] [7] (/Users/abdelrahmanaltawil/Developer/GitHub/study-scripts/Playground/.texpadtmp/main.aux)
+) [2] [3] [4] [5] [6] [7] [8] (/Users/abdelrahmanaltawil/Developer/GitHub/study-scripts/Playground/.texpadtmp/main.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 28633 strings out of 474273
- 719894 string characters out of 5747713
- 1983555 words of memory out of 5000000
- 50315 multiletter control sequences out of 15000+600000
+ 29635 strings out of 474273
+ 737009 string characters out of 5747713
+ 1986555 words of memory out of 5000000
+ 51304 multiletter control sequences out of 15000+600000
  574238 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,21n,110p,763b,2676s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on /Users/abdelrahmanaltawil/Developer/GitHub/study-scripts/Playground/.texpadtmp/main.pdf (7 pages, 175225 bytes).
+Output written on /Users/abdelrahmanaltawil/Developer/GitHub/study-scripts/Playground/.texpadtmp/main.pdf (8 pages, 184135 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 104 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
