@@ -3,6 +3,50 @@
 
 
 \begin{document}
+
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}
+
+			\node[above, font=\large, align=center] at (7,6.6) {Neighbor Selection at Iteration $\left(i\right)$};
+		    % First box with randomly placed balls
+		    \draw (0,0) rectangle (6,6);
+		    \foreach \x/\y in {0.5/0.8, 1.2/2.5, 2.3/3.1, 3.1/1.4, 1.8/0.9, 
+		                       4.2/5.1, 3.5/2.8, 2.7/4.5, 1.1/3.9,
+		                       4.4/2.1, 3.3/4.7, 0.7/5.2, 1.9/2.3, 5.1/3.3}
+		        \fill (\x, \y) circle (0.2);
+		        
+		    \fill[red] (2.3, 3.1) circle (0.2);
+
+			% Arrow		
+		    \draw[->, >=stealth, ultra thick] (6,3) -- (8,3) node[midway, above, text width=2.8cm, align=center] {Select \\ Random \\ Neighbor};
+		    \draw[->, >=stealth, ultra thick] (6,3) -- (8,3) node[midway, below, text width=2.8cm, align=center] {\scriptsize Using Uniform \\ Distribution};
+
+		    % Second box with randomly placed balls
+		    \draw (8,0) rectangle (14,6);
+		    \foreach \x/\y in {8.5/0.8, 9.2/2.5, 10.3/3.1, 11.1/1.4, 9.8/0.9, 
+		                       12.2/5.1, 11.5/2.8, 10.7/4.5, 9.1/3.9,
+		                       12.4/2.1, 11.3/4.7, 8.7/5.2, 9.9/2.3, 13.1/3.3}
+		        \fill (\x, \y) circle (0.2);
+		    \fill[red] (10.3, 3.1) circle (0.2);
+		    \fill[blue] (11.1, 1.4) circle (0.2);		    
+
+	        % Legend
+		    \node[draw, fill=white] at (7,-1) {
+		        \begin{tikzpicture}
+		            \fill[red] (0,0) circle (0.15);
+		            \node[right] at (0.2,0) {Current Solution};
+		            \fill (4,0) circle (0.15);
+		            \node[right] at (4.2,0) {Neighbor Solution};
+		            \fill[blue] (8,0) circle (0.15);
+		            \node[right] at (8.2,0) {Selected Solution};
+		        \end{tikzpicture}
+		    };
+		\end{tikzpicture}
+	    \caption{Simulated Annealing Neighbor Selection}
+	\end{figure}
+	
+	
 	\begin{figure}[h]
 		\centering
 	    \begin{tikzpicture}
