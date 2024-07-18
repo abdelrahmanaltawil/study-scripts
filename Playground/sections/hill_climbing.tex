@@ -1,0 +1,71 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../media/}}}
+
+
+\begin{document}
+
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}
+
+			\node[above, font=\large, align=center] at (7,6.6) {Neighbor Selection at Iteration $\left(i\right)$};
+		    % First box with randomly placed balls
+		    \draw (0,0) rectangle (6,6);
+		    \foreach \x/\y in {0.5/0.8, 1.2/2.5, 2.3/3.1, 3.1/1.4, 1.8/0.9, 
+		                       4.2/5.1, 3.5/2.8, 2.7/4.5, 1.1/3.9,
+		                       4.4/2.1, 3.3/4.7, 0.7/5.2, 1.9/2.3, 5.1/3.3}
+		        \fill (\x, \y) circle (0.2);
+		        
+		    \fill[red] (2.3, 3.1) circle (0.2);
+
+			% Arrow		
+		    \draw[->, >=stealth, ultra thick] (6,3) -- (8,3) node[midway, above, text width=2.8cm, align=center] {Select Best Neighbor};
+
+		    % Second box with randomly placed balls
+		    \draw (8,0) rectangle (14,6);
+		    \foreach \x/\y in {8.5/0.8, 9.2/2.5, 10.3/3.1, 11.1/1.4, 9.8/0.9, 
+		                       12.2/5.1, 11.5/2.8, 10.7/4.5, 9.1/3.9,
+		                       12.4/2.1, 11.3/4.7, 8.7/5.2, 9.9/2.3, 13.1/3.3}
+		        \fill (\x, \y) circle (0.2);
+		    \fill[red] (10.3, 3.1) circle (0.2);
+		    \fill[blue] (9.2, 2.5) circle (0.2);		    
+
+	        % Legend
+		    \node[draw, fill=white] at (7,-1) {
+		        \begin{tikzpicture}
+		            \fill[red] (0,0) circle (0.15);
+		            \node[right] at (0.2,0) {Current Solution};
+		            \fill (4,0) circle (0.15);
+		            \node[right] at (4.2,0) {Neighbor Solution};
+		            \fill[blue] (8,0) circle (0.15);
+		            \node[right] at (8.2,0) {Selected Solution};
+		        \end{tikzpicture}
+		    };
+		\end{tikzpicture}
+	    \caption{Hill Climbing Neighbor Selection}
+	\end{figure}
+	
+
+
+	\SetKwComment{Comment}{/* }{ */}
+
+	\begin{algorithm}
+		\caption{Hill Climbing Algorithm}\label{alg:three}
+		\KwData{$x_i $}
+		\KwResult{$x_{n} \gets \text{last solution candidate}$}\vspace{5pt}
+		$x_0 \gets \text{starting solution candidate}$\;\vspace{5pt}
+
+		\For{$i \in \lbrace 0, \dots, n\rbrace$}{
+		  $x_\text{neighbor} \gets \text{select best neighbor from } x_i \text{ neighborhood}$\;
+		  $\Delta \, cost \gets \text{compute cost difference between } x_\text{neighbor} \text{ and } x_i$\;\vspace{5pt}
+		  \uIf{$\text{cost}(x_\text{neighbor}) \text{ is better than } \text{cost}(x_i)$}{
+		    \textbf{Accept} $x_{i+1} \gets x_i$\;\vspace{5pt}
+		  }
+		  \uElseIf{$\text{cost}(x_\text{neighbor}) \text{ is worse than } \text{cost}(x_i)$}{\vspace{3pt}
+	      	\textbf{Terminate} \text{Search};\vspace{5pt}
+		  	}
+		  }
+	\end{algorithm}
+
+
+\end{document}
