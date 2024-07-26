@@ -40,4 +40,40 @@
 	    \caption{Gradient Decent Steps}
 	\end{figure}
 	
+	\begin{figure}[h]
+	    \centering
+		\begin{tikzpicture}
+	        \begin{axis}[
+	            xlabel = $x$,
+	            ylabel = $f(x)$,
+	            hide y axis,
+                ymin = -1, % Extend the y-axis range to see the arrow
+	            xtick = {1,2},
+	            xticklabels = {$x_{n+1}$, $x_n$},
+	            axis lines = middle,  
+	            declare function={
+	                func(\x) = \x^2+1;
+	            }
+	        ]
+	            
+	            % Function
+	            \addplot[ultra thick, domain=-1:3, samples=100, label={center:$f(x)$}] {func(x)};
+	            
+				% x/y values
+				\addplot [samples at={1,2}, black, only marks, mark=|] {0};
+				\addplot [samples at={1,2}, red, only marks] {4*\x - 3};
+		        \addplot [<-, thick, dashed, red, domain=0.5:2] {4*x - 3};
+				
+				
+				\draw[->, thick, red] (axis cs:1.8,-0.5) -- (axis cs:1.3,-0.5);			
+				
+				
+	        \draw[decorate,decoration={brace, amplitude=10pt, raise=4pt, mirror}] (axis cs:1, {4*1 - 3}) -- (axis cs:2, {4*2 - 3}) node[midway, anchor=north west, outer sep=10pt] {$\gamma$};
+
+        
+	        \end{axis}
+		\end{tikzpicture}
+	    \caption{Gradient Decent Step}
+	\end{figure}
+	
 \end{document}
